@@ -1,0 +1,1 @@
+import{u as e}from"./createLucideIcon-D-UbFbo0.js";import{t}from"./index-jnk6D7aV.js";import{n}from"./theses-view-BulDUALy.js";var r=e();function i(){let{id:e}=t.useParams();return(0,r.jsx)(n,{id:e})}export{i as component};

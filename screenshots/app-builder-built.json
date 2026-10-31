@@ -1,0 +1,41 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "ARGOS",
+      "hasCanvas": true,
+      "bodyTextLen": 2602,
+      "bodyTextHash": "5b9a30cc4d21987a5b345e023a5c5b141734c224a990d12644c915eff284b34c",
+      "bodyTextPrefix": "ARGOS F1 MONITOR F2 BRIEF F3 THESES F4 TREND F5 COT F6 MACRO F7 ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "ARGOS",
+      "hasCanvas": true,
+      "bodyTextLen": 436,
+      "bodyTextHash": "ff0d528dbf304f3ea5810a37e58041653c994ae2029b49b93957dad1da71262a",
+      "bodyTextPrefix": "ARGOS LIVE EURUSD 1.0843 −0.06% 0.8s USDJPY 149.45 −0.28% 1.2s G",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [
+    "BRAND WARNING: this looks like a game/canvas app but src/lib/og/site.json is missing \"type\": \"x:game\". X uses og:type=x:game to present the unfurl as a game card — set it in /workspace/src/lib/og/site.json per /workspace/.grok/skills/og/SKILL.md. Do not invent x:type or overload twitter:card as the game signal.",
+    "BRAND WARNING: this looks like a game/canvas app but /workspace/public/x-banner.jpg is missing. Games need a 50:11 X feed card (1200×264 JPEG) at public/x-banner.jpg — open /workspace/.grok/skills/og/SKILL.md and finish the brand-asset pass."
+  ],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

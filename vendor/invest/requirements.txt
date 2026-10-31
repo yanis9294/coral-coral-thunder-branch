@@ -1,0 +1,16 @@
+# Cœur (obligatoire)
+numpy
+pandas
+matplotlib
+scipy
+yfinance
+requests
+
+# Optionnel — frontière efficiente convexe (efficient_frontier_cvxpy)
+cvxpy
+
+# Optionnel — Hierarchical Risk Parity / max Sharpe régularisé (hrp_optimize, max_sharpe_pypfopt)
+PyPortfolioOpt
+
+# Optionnel — tear-sheet de backtest plus riche que backtest_metrics()
+quantstats

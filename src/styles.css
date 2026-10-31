@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #08090b;
+  --bg-elevated: #101214;
+  --bg-panel: #14171c;
+  --bg-hover: #1c2128;
+  --bg-sunken: #050607;
+  --fg: #e6e8eb;
+  --fg-muted: #8b939e;
+  --fg-subtle: #5c6570;
+  --border: color-mix(in oklab, var(--fg) 11%, transparent);
+  --border-strong: color-mix(in oklab, var(--fg) 22%, transparent);
+  --accent: #b7c9d4;
+  --accent-fg: #08090b;
+  --bull: #3dba86;
+  --bear: #e25c4a;
+  --warn: #c9a36a;
+  --high: #d4784a;
+  --info: #6a8ca3;
+  --crit: #e25c4a;
+  --map-ocean: #0c1016;
+  --map-land: #1a222c;
+  --map-land-hi: #24303c;
+  --map-graticule: rgba(183, 201, 212, 0.08);
+  --map-border: rgba(183, 201, 212, 0.22);
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --motion-slow: 400ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-panel: var(--bg-panel);
+  --color-bg-hover: var(--bg-hover);
+  --color-bg-sunken: var(--bg-sunken);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-bull: var(--bull);
+  --color-bear: var(--bear);
+  --color-warn: var(--warn);
+  --color-high: var(--high);
+  --color-info: var(--info);
+  --color-crit: var(--crit);
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+}
+
+@layer base {
+  html,
+  body,
+  #app {
+    height: 100%;
+  }
+
+  html {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--fg);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 30%, transparent);
+    color: var(--fg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.terminal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--fg) 22%, transparent) transparent;
+}
+
+.terminal-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--fg) 20%, transparent);
+  border-radius: 99px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.hairline {
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+@keyframes pulse-live {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.live-dot {
+  animation: pulse-live 1.6s var(--ease-out) infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--fg) 8%, transparent),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s linear infinite;
+}
