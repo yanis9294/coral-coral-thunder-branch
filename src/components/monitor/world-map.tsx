@@ -71,8 +71,8 @@ export function WorldMap() {
   useEffect(() => {
     let dead = false;
     Promise.all([
-      fetch("/geo/countries-110m.json").then((r) => r.json()),
-      fetch("/geo/land-110m.json").then((r) => r.json()),
+      fetch(`${import.meta.env.BASE_URL}geo/countries-110m.json`).then((r) => r.json()),
+      fetch(`${import.meta.env.BASE_URL}geo/land-110m.json`).then((r) => r.json()),
     ]).then(([c, l]) => {
       if (dead) return;
       const countries = feature(c, c.objects.countries) as unknown as FC;
